@@ -1,4 +1,6 @@
 
+all: pianoclient pianoserver
+
 pianoserver: pianoserver.c
 	gcc -o $@ $^
 
