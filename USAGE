@@ -1,0 +1,27 @@
+====================================================
+== USAGE
+====================================================
+
+Requirments:
+	Perl
+	Pianobar installed and added to $PATH
+	Term::ReadKey Perl module from CPAN
+
+Build executables with 'make'
+Add pianoserver to the startup daemons
+  Start as your username to have access to your pianobar config file:
+     su <USERNAME> -c 'bash -i -c "pianoserver" ' &
+
+
+Then you can run pianoclient from any terminal as a frontend to control
+the pianobar process launched from the pianoserver daemon.
+
+Pianoserver Controls (Always start with '%'):
+   %start    Starts pianobar
+   %stop     Kills pianobar
+   %restart  Restarts pianobar
+
+All other character that do not start with '%' are passed 
+directly to the pianobar process...
+
+ 
