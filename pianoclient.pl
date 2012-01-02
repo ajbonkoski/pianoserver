@@ -4,6 +4,7 @@ use Fcntl;
 use Term::ReadKey;
 
 my $LOOP_WAIT_TIME   = 0.100;
+my $AUTOSTART_EN = 1;
 
 my $PIANOBAR_INPUT  = '/tmp/piano_pipe_in';
 my $PIANOBAR_OUTPUT = '/tmp/piano_output';
@@ -14,9 +15,11 @@ my $daemon_control_buffer = '';
 
 ReadMode 'cbreak';
 
-print "before...\n";
 open(OUT_FILE, "tail -f $PIANOBAR_OUTPUT |") or die "Error: Could not open output fifo ('$PIANOBAR_OUTPUT')\n";
-print "after...\n";
+
+if($AUTOSTART_EN){
+    send_command("%start");
+}
 
 my $done = 0;
 MAIN_LOOP: 

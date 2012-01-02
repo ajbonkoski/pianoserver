@@ -1,11 +1,13 @@
 
-all: pianoclient pianoserver
+all: bin/pianoclient bin/pianoserver
 
-pianoserver: pianoserver.c
+bin/pianoserver: pianoserver.c
+	mkdir -p bin
 	gcc -o $@ $^
 
-pianoclient: pianoclient.pl
+bin/pianoclient: pianoclient.pl
+	mkdir -p bin
 	cp -fr $^ $@
 
 clean:
-	rm pianoserver pianoclient
+	rm bin/pianoserver bin/pianoclient

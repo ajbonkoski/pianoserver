@@ -178,15 +178,6 @@ int main(int argc, char *argv[]){
     exit(1);
   }
 
-  
-  /*
-  ret_val = mkfifo(PIANO_PIPE_OUT, 0666);
-  if((ret_val == -1) && (errno != EEXIST)){
-    perror("Error creating named pipe");
-    exit(1);
-  }
-  */
-
   /* Open pipes*/
   int fd_in, fd_out;
   if((fd_in= open(PIANO_PIPE_IN,  O_RDONLY | O_NONBLOCK)) == -1){
