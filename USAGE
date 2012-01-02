@@ -8,6 +8,8 @@ Requirments:
 	Term::ReadKey Perl module from CPAN
 
 Build executables with 'make'
+Added the executables in 'bin' to your $PATH or move them to a global bin directory.
+
 Add pianoserver to the startup daemons
   Start as your username to have access to your pianobar config file:
      su <USERNAME> -c 'bash -i -c "pianoserver" ' &
